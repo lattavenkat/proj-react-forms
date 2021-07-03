@@ -77,10 +77,10 @@ export default function Student() {
         <div> Submitted Sucessfully </div>
       )}
       <form className="f1" onSubmit={handleDoSubmit} noValidate>
-        <table align="center" cellpadding="2">
+        <table align="center" >
           <tr>
             <td>
-              <h1>STUDENT DETAILS FORM</h1>
+             <h1><i>STUDENT DETAILS FORM</i></h1>
             </td>
           </tr>
           <tr>
