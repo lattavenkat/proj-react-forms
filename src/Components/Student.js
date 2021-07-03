@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import ErrorMessage from "./ErrorMessage";
 export default function Student() {
   const initialValues = {
-    fname: '',
-    lname: '',
-    email: '',
-    mob: '',
-    hobbies:false,
+    fname: "",
+    lname: "",
+    email: "",
+    mob: "",
+    hobbies: false,
   };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setformErrors] = useState({});
@@ -77,72 +77,227 @@ export default function Student() {
         <div> Submitted Sucessfully </div>
       )}
       <form className="f1" onSubmit={handleDoSubmit} noValidate>
-        <label> FIRST NAME:</label>
-        <input type="text"name="fname"
-          placeholder="enter first name"value={formValues.fname}onChange={handleOnChange}/>
-        <br />
-        <br />
-        <div>
-          <ErrorMessage message={formErrors.fname} />
-        </div>
-        <label> LAST NAME:</label>
-        <input
-          type="text"
-          name="lname"
-          placeholder="enter last name"
-          value={formValues.lname}
-          onChange={handleOnChange}
-          
-        />
-        <br />
-        <br />
-        <div>
-          <ErrorMessage message={formErrors.lname} />
-        </div>
-        <label> EMAIL ADDRESS:</label>
-        <input
-          type="text"
-          name="email"
-          placeholder="enter email"
-          value={formValues.address}
-          onChange={handleOnChange}
-          
-        />
-        <br />
-        <br />
-        <div>
-          <ErrorMessage message={formErrors.email} />
-        </div>
-        <label> MOBILE NUMBER:</label>
-        <input type="text"name="mob"placeholder="enter mobile number.."value={formValues.mob}onChange={handleOnChange}/><br /><br />
-        
-        <div>
-          <ErrorMessage message={formErrors.mob} />
-        </div>
-        {/* <label> GENDER:</label>
+        <table align="center" cellpadding="2">
+          <tr>
+            <td>
+              <h1>STUDENT DETAILS FORM</h1>
+            </td>
+          </tr>
+          <tr>
+            {" "}
+            <td>
+              <label> FIRST NAME:</label>
+
+              <span class="focus-bg"></span>
+            </td>
+            <td>
+              <div class="col-3">
+                <input
+                  class="effect-7"
+                  type="text"
+                  name="fname"
+                  placeholder="enter first name"
+                  value={formValues.fname}
+                  onChange={handleOnChange}
+                />
+
+                <span class="focus-border">
+                  <i></i>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <br />
+          <br />
+          <div>
+            <ErrorMessage message={formErrors.fname} />
+          </div>
+          <tr>
+            <td>
+              <label> LAST NAME:</label>
+              <span class="focus-bg"></span>
+            </td>
+            <td>
+              {" "}
+              <div class="col-3">
+                <input
+                  type="text"
+                  name="lname"
+                  placeholder="enter last name"
+                  value={formValues.lname}
+                  onChange={handleOnChange}
+                />
+                <span class="focus-border">
+                  <i></i>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <br />
+          <br />
+          <div>
+            <ErrorMessage message={formErrors.lname} />
+          </div>
+          <tr>
+            <td>
+              <label> EMAIL ADDRESS:</label>
+              <span class="focus-bg"></span>
+            </td>
+            <td>
+              {" "}
+              <div class="col-3">
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="enter email"
+                  value={formValues.address}
+                  onChange={handleOnChange}
+                />
+                <span class="focus-border">
+                  <i></i>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <br />
+          <br />
+          <div>
+            <ErrorMessage message={formErrors.email} />
+          </div>
+          <tr>
+            <td>
+              <label> MOBILE NUMBER:</label>
+
+              <span class="focus-bg"></span>
+            </td>
+            <td>
+              {" "}
+              <div class="col-3">
+                <input
+                  type="text"
+                  name="mob"
+                  placeholder="enter mobile number.."
+                  value={formValues.mob}
+                  onChange={handleOnChange}
+                />
+                <span class="focus-border">
+                  <i></i>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <br />
+          <br />
+          <div>
+            <ErrorMessage message={formErrors.mob} />
+          </div>
+          {/* <label> GENDER:</label>
         <input type="radio" name="gender" value="male" checked/>Male
         <input type="radio" name="gender" value="female"/>Female<br /><br />
                 */}
-        <label> Select your hobbies</label>
-          <input type="checkbox" name="hobbies" value="cricket" onChange={handleOnChange}/>
-          cricket
-          <input type="checkbox" name="hobbies" value="football" onChange={handleOnChange}/>
-          football
-          <input type="checkbox" name="hobbies" value="kabaddi" onChange={handleOnChange}/>
-          kabaddi
-          <input type="checkbox" name="hobbies" value="vollybal" onChange={handleOnChange}/>
-          vollybal
-          <input type="checkbox" name="hobbies" value="racing" onChange={handleOnChange} />
-          racing
-          <input type="checkbox" name="hobbies" value="hockey" onChange={handleOnChange}/>
-          hockey
-           Other:
-          <input type="checkbox" name="hobbies" value="" onChange={handleOnChange}/>
+          <tr>
+            <td>
+              <label> Select your hobbies</label>
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                name="hobbies"
+                value="cricket"
+                onChange={handleOnChange}
+              />
+              cricket
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input
+                type="checkbox"
+                name="hobbies"
+                value="football"
+                onChange={handleOnChange}
+              />
+              football
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              {" "}
+              <input
+                type="checkbox"
+                name="hobbies"
+                value="kabaddi"
+                onChange={handleOnChange}
+              />
+              kabaddi
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              {" "}
+              <input
+                type="checkbox"
+                name="hobbies"
+                value="vollybal"
+                onChange={handleOnChange}
+              />
+              vollybal
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              {" "}
+              <input
+                type="checkbox"
+                name="hobbies"
+                value="racing"
+                onChange={handleOnChange}
+              />
+              racing
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              {" "}
+              <input
+                type="checkbox"
+                name="hobbies"
+                value="hockey"
+                onChange={handleOnChange}
+              />
+              hockey
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              {" "}
+              <input
+                type="checkbox"
+                name="hobbies"
+                value=""
+                onChange={handleOnChange}
+              />
+              Others
+            </td>
+          </tr>
+
           <div>
             <ErrorMessage message={formErrors.hobbies} />
           </div>
-        
-        <button type="submit">Submit</button>
+          <tr>
+            <td></td>
+            <td>
+              {" "}
+              <button type="submit">Submit</button>
+            </td>
+          </tr>
+        </table>
       </form>
     </div>
   );
