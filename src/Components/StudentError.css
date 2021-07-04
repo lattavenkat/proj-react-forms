@@ -1,3 +1,110 @@
+/* VALIDATION ERROR MESSAGE */
 .error {
-    color:red;
+  color:darkred;
 }
+.btn {
+  align-items: center;
+}
+.txt{
+    font-size: 29px;
+    color:#fc3e65;
+    margin-left: 190px;
+
+    filter: drop-shadow(6px 5px 15px #fc3e65);
+}
+#mainContainer {
+  width: 45em;
+  height: 42em;
+  /* margin: 0 auto; */
+  margin-top: 3%;
+  margin-left: 27%;
+  box-sizing: border-box;
+  display: flex;
+  background: white;
+  border-radius: 0.3em;
+  box-shadow: 12px 12px 30px -11.9px rgba(251, 60, 96, 0.35),
+    inset 0px 0px 2px 0px rgba(0, 0, 0, 0.3);
+  transition: 0.8s;
+}
+
+#mainContainer:hover {
+  transform: scale(1.1);
+  transition: 0.6s;
+}
+
+.aside {
+  border-top-left-radius: 1.5em;
+  border-bottom-left-radius: 1.5em;
+  border-top-right-radius: 1.1em;
+  border-bottom-right-radius: 0.1em;
+  display: inline-block;
+   filter: drop-shadow(5px 5px 15px #fc3e65); 
+}
+ .cardview {
+  position: relative;
+  width: 47em;
+  height: 43em;
+  top: -12px;
+  left: -5px;
+  margin-top: -2%;
+  
+  border-top-left-radius: 1.0em;
+  border-bottom-left-radius: 1.7em;
+  border-top-right-radius: 0.1em;
+  border-bottom-right-radius: 0.1em;
+   background: linear-gradient(120deg, #fcca6e, #f97e32cc,#fc3e65); 
+  /* clip-path: polygon(0 0, 100% 0%, 71% 100%, 0% 100%);  */
+} 
+.cardview{
+   background-color:  #FFCDD2;
+}
+#card-content {
+  width: 400px;
+  height: inherit;
+  box-sizing: border-box;
+  padding: 20px 4px;
+}
+/* label{
+    margin-left: 29%;
+} */
+
+/* SUBMIT BUTTON EFFECT -START*/
+.button1 {
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 160px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button1 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button1 span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button1:hover span {
+    padding-right: 25px;
+  }
+  
+  .button1:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  /* SUBMIT BUTTON EFFECT -END*/
