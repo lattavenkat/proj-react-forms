@@ -73,7 +73,7 @@ export default function Student() {
       errors.mob = "*Please enter only number.";
     }
     if (values.score < 0) {
-      errors.score = " select credit score";
+      errors.score = "*Select credit score";
     }
     // if (values.hobbies < 0) {
     //   errors.hobbies = "*Please Select your hobby";
@@ -87,17 +87,16 @@ export default function Student() {
   };
   return (
     <div>
-      {Object.entries(formErrors).length === 0 && submitted && (
-        // <div> Submitted Sucessfully </div>
-        <div> </div>
-      )}
       <div id="mainContainer">
         <div class="aside">
           <div class="cardview">
             <form className="f1" onSubmit={handleDoSubmit} noValidate>
-              <h2 class="txt">
-                <i>STUDENT DETAILS FORM</i>
-              </h2>
+              {/* <h2 class="txt">
+                STUDENT DETAILS FORM
+              </h2> */}
+              <div class="wrapper1">
+                <h1>STUDENT DETAILS FORM</h1>
+              </div>
               <table>
                 {/* <h2 class="txt">
                   <i>STUDENT DETAILS FORM</i>
@@ -213,7 +212,7 @@ export default function Student() {
                         value={formValues.score}
                       >
                         <option value="-1">
-                          Please select your credit score
+                          Select your credit score
                         </option>
                         {score.map((x) => {
                           return <option value={x.id}>{x.name}</option>;
@@ -233,7 +232,7 @@ export default function Student() {
                 */}
                 <tr>
                   <td>
-                    <label> Select your hobbies</label>
+                    <label> SELECT YOUR HOBBIES :</label>
                   </td>
                   <td>
                     <input
@@ -327,16 +326,20 @@ export default function Student() {
                 <tr>
                   <td></td>
                   <td>
-                    <button type="submit" class="button1">
-                      Submit
-                    </button>
+                    <section>
+                      <button type="submit" class="overlay">
+                        Submit
+                      </button>
+                    </section>
                   </td>
                 </tr>
                 <br />
                 <tr>
                   {" "}
-                  <div class="submt">
-                    <span>  Submitted Sucessfully</span>
+                  <div>
+                    {Object.entries(formErrors).length === 0 && submitted && (
+                     <div> <h3>SUBMITTED SUCCESSFULLY</h3></div>
+                    )}
                   </div>
                 </tr>
               </table>
