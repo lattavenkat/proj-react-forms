@@ -29,8 +29,9 @@ export default function Student() {
     console.log(formValues);
 
     console.log("===" + Object.entries(formErrors).length);
+    
+
     setSubmitted(true);
-    alert("Your Form has been Submitted!");
     console.log("Form has been Submitted sucessfully ");
   };
 
@@ -51,12 +52,17 @@ export default function Student() {
   const validate = (values) => {
     let errors = {};
     console.log(values);
+    const onlystr = /^[a-zA-Z]+$/;
 
     if (!values.fname) {
       errors.fname = "*First Name cannot be empty";
+    } else if (!onlystr.test(values.fname)) {
+      errors.fname = "*Only alphabets are Permitted";
     }
     if (!values.lname) {
       errors.lname = "*Last Name cannot be empty";
+    } else if (!onlystr.test(values.lname)) {
+      errors.lname = "*Only alphabets are Permitted";
     }
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!values.email) {
@@ -94,6 +100,7 @@ export default function Student() {
               {/* <h2 class="txt">
                 STUDENT DETAILS FORM
               </h2> */}
+
               <div class="wrapper1">
                 <h1>STUDENT DETAILS FORM</h1>
               </div>
@@ -211,9 +218,7 @@ export default function Student() {
                         onChange={handleOnChange}
                         value={formValues.score}
                       >
-                        <option value="-1">
-                          Select your credit score
-                        </option>
+                        <option value="-1">Select your credit score</option>
                         {score.map((x) => {
                           return <option value={x.id}>{x.name}</option>;
                         })}
@@ -327,7 +332,15 @@ export default function Student() {
                   <td></td>
                   <td>
                     <section>
-                      <button type="submit" class="overlay">
+                      <button
+                        type="submit"
+                        class="overlay"
+                        // disabled={Object.entries(formErrors || {}).length < 0}
+                        // Fill
+                        // out
+                        // the
+                        // Form
+                      >
                         Submit
                       </button>
                     </section>
@@ -336,10 +349,13 @@ export default function Student() {
                 <br />
                 <tr>
                   {" "}
-                  <div>
+                  {/* <div>
                     {Object.entries(formErrors).length === 0 && submitted && (
                      <div> <h3>SUBMITTED SUCCESSFULLY</h3></div>
                     )}
+                  </div> */}
+                  <div>  {Object.entries(formErrors).length === 0 && submitted && (
+                    alert(formValues.fname+" "+" your form has been submitted sucessfully"))}
                   </div>
                 </tr>
               </table>
