@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Student1design.css";
 import ErrorMessage from "./ErrorMessage";
-
 export default function Student1() {
   const initialValues = {
     fname: "",
@@ -51,20 +50,20 @@ export default function Student1() {
     if (!values.fname) {
       errors.fname = "*First Name cannot be empty";
     } 
-     if (!onlystr.test(values.fname)) {
+     else if (!onlystr.test(values.fname)) {
       errors.fname = "*Only alphabets are Permitted";
     }
     if (!values.lname) {
       errors.lname = "*Last Name cannot be empty";
     } 
-     if (!onlystr.test(values.lname)) {
+     else if (!onlystr.test(values.lname)) {
       errors.lname = "*Only alphabets are Permitted";
     }
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     if (!values.mail) {
       errors.mail = "*Mail cannot be blank";
     } 
-     if (!regex.test(values.mail)) {
+     else if (!regex.test(values.mail)) {
       errors.mail = "*Wrong mail format";
     }
     const phoneRegExp =
@@ -73,22 +72,26 @@ export default function Student1() {
     if (!values.mob) {
       errors.mob = "*Mobile number cannot be empty";
     } 
-     if (!phoneRegExp.test(values.mob)) {
-      errors.mob = "*Please enter only number.";
+    else if (!phoneRegExp.test(values.mob)) {
+      errors.mob = "*Please enter only number";
     }
     if (!values.city) {
       errors.city = "*City cannot be empty";
     } 
-     if (!onlystr.test(values.city)) {
+    else if (!onlystr.test(values.city)) {
       errors.city = "*Only alphabets are Permitted";
     }
     const pinregex = /^([1-9]{1}[0-9]{5}|[1-9]{1}[0-9]{3}\\s[0-9]{3})$/;
     if (!values.pincode) {
       errors.pincode = "*Pincode cannot be empty";
     } 
-     if (!pinregex.test(values.pincode)) {
+    else if (!pinregex.test(values.pincode)) {
       errors.pincode =
         "*PIN code doesn't start from zero *Allows 6 digits only *Allows 6 consecutive digits (e.g. 431602) *Allows 1 space after 3 digits (e.g. 431 602)";
+    }if (!values.state) {
+      errors.state = "*State cannot be empty";
+    }else if (!onlystr.test(values.state)) {
+      errors.state = "*Only alphabets are Permitted";
     }
     if (values.country < 0) {
       errors.country = "*Select your country";
@@ -144,19 +147,7 @@ export default function Student1() {
                 onChange={handleOnChange}/>
             </td>
             <ErrorMessage message={formErrors.mob} />
-          </tr>
-
-          {/* ----- Address ----------------------------------------------------------
-          <tr>
-            <td>
-              ADDRESS <br />
-              <br />
-              <br />
-            </td>
-            <td>
-              <textarea name="add" rows="4" cols="30"></textarea>
-            </td>
-          </tr> */}
+          </tr>          
           {/* ----- City ---------------------------------------------------------- */}
           <tr>
             <td>CITY</td>
