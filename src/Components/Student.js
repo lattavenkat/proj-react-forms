@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ErrorMessage from "./ErrorMessage";
 import "./StudentError.css";
-
+import "./StudentDesign.css";
 export default function Student() {
   const initialValues = {
     fname: "",
@@ -11,9 +11,6 @@ export default function Student() {
     score: -1,
     hobbies: false,
   };
-  const [formValues, setFormValues] = useState(initialValues);
-  const [formErrors, setformErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
   const score = [
     { id: 1, name: 1 },
     { id: 2, name: 2 },
@@ -21,18 +18,21 @@ export default function Student() {
     { id: 4, name: 4 },
     { id: 5, name: 5 },
   ];
+  const [formValues, setFormValues] = useState(initialValues);
+  const [formErrors, setformErrors] = useState({});
+  const [submitted, setSubmitted] = useState(false);
+  
   //onformsubmit
   const handleDoSubmit = (e) => {
     e.preventDefault();
     setformErrors(validate(formValues));
 
-    console.log(formValues);
+    // console.log(formValues);
 
     console.log("===" + Object.entries(formErrors).length);
-    
 
     setSubmitted(true);
-    console.log("Form has been Submitted sucessfully ");
+    // console.log("Form has been Submitted sucessfully ");
   };
 
   //onchangeevent
@@ -220,7 +220,7 @@ export default function Student() {
                       >
                         <option value="-1">Select your credit score</option>
                         {score.map((x) => {
-                          return <option value={x.id}>{x.name}</option>;
+                          return <option key={x.id}>{x.name}</option>
                         })}
                       </select>
                       <span class="focus-border">
@@ -335,11 +335,7 @@ export default function Student() {
                       <button
                         type="submit"
                         class="overlay"
-                        // disabled={Object.entries(formErrors || {}).length < 0}
-                        // Fill
-                        // out
-                        // the
-                        // Form
+                        // onClick={() => {alert('woooooooot?');}}
                       >
                         Submit
                       </button>
@@ -348,14 +344,13 @@ export default function Student() {
                 </tr>
                 <br />
                 <tr>
-                  {" "}
-                  {/* <div>
+                
+                  <div>
+                    
                     {Object.entries(formErrors).length === 0 && submitted && (
-                     <div> <h3>SUBMITTED SUCCESSFULLY</h3></div>
+                      //  alert(formValues.fname+" "+" your form has been submitted sucessfully")
+                      <h3>SUBMITTED SUCCESSFULLY</h3>
                     )}
-                  </div> */}
-                  <div>  {Object.entries(formErrors).length === 0 && submitted && (
-                    alert(formValues.fname+" "+" your form has been submitted sucessfully"))}
                   </div>
                 </tr>
               </table>
