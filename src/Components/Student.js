@@ -11,6 +11,7 @@ export default function Student() {
     score: -1,
     hobbies: false,
   };
+ 
   const score = [
     { id: 1, name: 1 },
     { id: 2, name: 2 },
@@ -21,7 +22,7 @@ export default function Student() {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setformErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
-  
+
   //onformsubmit
   const handleDoSubmit = (e) => {
     e.preventDefault();
@@ -81,9 +82,6 @@ export default function Student() {
     if (values.score < 0) {
       errors.score = "*Select credit score";
     }
-    // if (values.hobbies < 0) {
-    //   errors.hobbies = "*Please Select your hobby";
-    // }
 
     if (values.hobbies === false) {
       errors.hobbies = "*Invalid Selection";
@@ -220,7 +218,7 @@ export default function Student() {
                       >
                         <option value="-1">Select your credit score</option>
                         {score.map((x) => {
-                          return <option key={x.id}>{x.name}</option>
+                          return <option key={x.id}>{x.name}</option>;
                         })}
                       </select>
                       <span class="focus-border">
@@ -344,9 +342,7 @@ export default function Student() {
                 </tr>
                 <br />
                 <tr>
-                
                   <div>
-                    
                     {Object.entries(formErrors).length === 0 && submitted && (
                       //  alert(formValues.fname+" "+" your form has been submitted sucessfully")
                       <h3>SUBMITTED SUCCESSFULLY</h3>

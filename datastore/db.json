@@ -1,0 +1,100 @@
+{
+  "student": [
+    {
+      "id": 1,
+      "fname": "Latha",
+      "lname": "Jaeger",
+      "mail": "lathajaeger@gmail.com",
+      "mob": "8974512354",
+      "city": "Vellore",
+      "pincode": "632002",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "hobby": "Baking"
+    },
+    {
+      "id": 2,
+      "fname": "Gomathi",
+      "lname": "Ram",
+      "mail": "Gomathi@gmail.com",
+      "mob": "9974512354",
+      "city": "Vellore",
+      "pincode": "632002",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "hobby": "Reading"
+    },
+    {
+      "fname": "Gokul",
+      "lname": "R",
+      "mail": "goku@gmail.com",
+      "mob": "9876545678",
+      "city": "Chennai",
+      "pincode": "600032",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "hobby": true,
+      "id": 3
+    },
+    {
+      "fname": "Akash",
+      "lname": "Sachin",
+      "mail": "sachin@gmail.com",
+      "mob": "4567876545",
+      "city": "Madurai",
+      "pincode": "600066",
+      "state": "Tamil nadu",
+      "country": "India",
+      "hobby": true,
+      "id": 4
+    },
+    {
+      "fname": "xxx",
+      "lname": "fddsf",
+      "mail": "dfs@gmail.com",
+      "mob": "5435454323",
+      "city": "fds",
+      "pincode": "543456",
+      "state": "sfsf",
+      "country": "China",
+      "hobby": true,
+      "id": 5
+    },
+    {
+      "fname": "dfs",
+      "lname": "fds",
+      "mail": "sdaf@gmail.com",
+      "mob": "5432345654",
+      "city": "sfd",
+      "pincode": "543345",
+      "state": "sdf",
+      "country": "China",
+      "hobby": true,
+      "id": 6
+    },
+    {
+      "fname": "dsf",
+      "lname": "sdf",
+      "mail": "sdf@gmail.com",
+      "mob": "4356765434",
+      "city": "fa",
+      "pincode": "543345",
+      "state": "sdf",
+      "country": "China",
+      "hobby": true,
+      "id": 7
+    },
+    {
+      "fname": "dsf",
+      "lname": "sdf",
+      "mail": "sdf@gmail.com",
+      "mob": "4356765434",
+      "city": "fa",
+      "pincode": "543345",
+      "state": "sdf",
+      "country": "China",
+      "hobby": true,
+      "id": 8
+    }
+  ]
+}
