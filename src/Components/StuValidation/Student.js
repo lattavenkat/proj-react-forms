@@ -11,7 +11,7 @@ export default function Student() {
     score: -1,
     hobbies: false,
   };
- 
+
   const score = [
     { id: 1, name: 1 },
     { id: 2, name: 2 },
@@ -27,8 +27,6 @@ export default function Student() {
   const handleDoSubmit = (e) => {
     e.preventDefault();
     setformErrors(validate(formValues));
-
-    // console.log(formValues);
 
     console.log("===" + Object.entries(formErrors).length);
 
@@ -102,7 +100,8 @@ export default function Student() {
               <div class="wrapper1">
                 <h1>STUDENT DETAILS FORM</h1>
               </div>
-              <table>
+              <table class="center">
+                <tbody>
                 {/* <h2 class="txt">
                   <i>STUDENT DETAILS FORM</i>
                 </h2> */}
@@ -119,6 +118,7 @@ export default function Student() {
                         class="effect-7"
                         type="text"
                         name="fname"
+                        maxLength="20"
                         placeholder="Enter first name"
                         value={formValues.fname}
                         onChange={handleOnChange}
@@ -144,6 +144,7 @@ export default function Student() {
                         class="effect-7"
                         type="text"
                         name="lname"
+                        maxLength="20"
                         placeholder="Enter last name"
                         value={formValues.lname}
                         onChange={handleOnChange}
@@ -168,6 +169,7 @@ export default function Student() {
                         class="effect-7"
                         type="text"
                         name="email"
+                        maxLength="20"
                         placeholder="Enter email"
                         value={formValues.address}
                         onChange={handleOnChange}
@@ -192,6 +194,7 @@ export default function Student() {
                         class="effect-7"
                         type="text"
                         name="mob"
+                        maxLength="10"
                         placeholder="Enter mobile number.."
                         value={formValues.mob}
                         onChange={handleOnChange}
@@ -237,6 +240,7 @@ export default function Student() {
                   <td>
                     <label> SELECT YOUR HOBBIES :</label>
                   </td>
+                  
                   <td>
                     <input
                       type="checkbox"
@@ -245,11 +249,6 @@ export default function Student() {
                       onChange={handleOnChange}
                     />
                     CRICKET
-                  </td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>
                     <input
                       type="checkbox"
                       name="hobbies"
@@ -257,25 +256,13 @@ export default function Student() {
                       onChange={handleOnChange}
                     />
                     FOOTBALL
-                  </td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>
-                    {" "}
                     <input
                       type="checkbox"
                       name="hobbies"
                       value="kabaddi"
                       onChange={handleOnChange}
                     />
-                    KABADI
-                  </td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>
-                    {" "}
+                    KABADI<br />
                     <input
                       type="checkbox"
                       name="hobbies"
@@ -283,12 +270,6 @@ export default function Student() {
                       onChange={handleOnChange}
                     />
                     VOLLYBALL
-                  </td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>
-                    {" "}
                     <input
                       type="checkbox"
                       name="hobbies"
@@ -296,25 +277,13 @@ export default function Student() {
                       onChange={handleOnChange}
                     />
                     RACING
-                  </td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>
-                    {" "}
                     <input
                       type="checkbox"
                       name="hobbies"
                       value="hockey"
                       onChange={handleOnChange}
                     />
-                    HOCKEY
-                  </td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>
-                    {" "}
+                    HOCKEY<br />
                     <input
                       type="checkbox"
                       name="hobbies"
@@ -341,15 +310,22 @@ export default function Student() {
                   </td>
                 </tr>
                 <br />
-                <tr>
-                  <div>
-                    {Object.entries(formErrors).length === 0 && submitted && (
-                      //  alert(formValues.fname+" "+" your form has been submitted sucessfully")
-                      <h3>SUBMITTED SUCCESSFULLY</h3>
-                    )}
-                  </div>
-                </tr>
+                </tbody>
               </table>
+              <div>
+                  {Object.entries(formErrors).length === 0 && submitted && (
+                    //  alert(formValues.fname+" "+" your form has been submitted sucessfully")
+                    <div >
+                      <h3>SUBMITTED SUCCESSFULLY</h3>
+                      <p class="prnt"><b>First Name:   </b>{formValues.fname}</p>
+                      <p class="prnt"><b>Last Name: </b> {formValues.lname}</p>
+                      <p class="prnt"><b>Email Id:</b> {formValues.email}</p>
+                      <p class="prnt"><b>Contact Number:  </b>{formValues.mob}</p>
+                      <p class="prnt"><b>Game Credit Score: </b>{formValues.score}</p>
+                      <p class="prnt"><b>Hobby: </b>{formValues.hobbies.toString()}</p>
+                    </div>
+                  )}
+                </div>
             </form>
           </div>
         </div>

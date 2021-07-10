@@ -1,5 +1,5 @@
 import React,{ useState , useEffect} from 'react'
-import ErrorMessage from './ErrorMessage';
+import ErrorMessage from '../ErrorMessage';
 export default function FormApi() {
     const [students,setStudents]=useState([]);
 

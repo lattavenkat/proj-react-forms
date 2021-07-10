@@ -1,0 +1,86 @@
+/* TEXT STYLING */
+div{
+    background-color:lightblue;
+  }
+  .name{
+    color:rgb(255, 85, 119);
+    background-color: grey;
+    
+  }
+  .date{
+    color:blue;
+    background-color: light blue;
+  }
+  
+  /* WAVE TEXT */
+  /* *,
+  *::before,
+  *::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+  
+  html{
+    font-size: 62.5%;
+  }
+  
+  body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height: 90vh;
+    font-size: 3rem;
+    font-family: 'Lato', mono-space;
+  }
+  
+   */
+  span{
+    display:inline-block;
+   color:#ff5fff;
+   animation: wavy 1.2s ease-in ;
+  }
+  
+  span:nth-child(1){
+    animation-delay:0s;
+  }
+  span:nth-child(2){
+    animation-delay: .3s;
+  }
+  span:nth-child(3){
+    animation-delay: .6s;
+  }
+  span:nth-child(4){
+    animation-delay: .9s;
+  }
+  span:nth-child(5){
+    animation-delay: 1.2s;
+  }
+  
+  
+  @Keyframes wavy {
+    0%{
+      transform: translateY(0);
+      
+    }
+    50%{
+      transform: translateY(-1.5rem);
+    }
+    100%{
+      transform: translateY(0);
+    }
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  

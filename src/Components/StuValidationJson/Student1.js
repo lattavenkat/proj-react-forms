@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Student1design.css";
-import ErrorMessage from "./ErrorMessage";
+import ErrorMessage from "../ErrorMessage";
 export default function Student1(props) {
   const initialValues = {
     fname: "",
@@ -286,21 +286,20 @@ export default function Student1(props) {
             <tr>
               <td colspan="2" align="center">
                 <button type="submit">Submit</button>
-                <input type="reset" value="Reset" />
+               
               </td>
             </tr>
             {Object.entries(formErrors).length === 0 && submitted && (
               //  alert(formValues.fname+" "+" your form has been submitted sucessfully")
               <div>
                 <h3>SUBMITTED SUCCESSFULLY</h3>
-                <p>First Name: {formValues.fname}</p>
-                <p>Last Name: {formValues.lname}</p>
-                <p>Contact Number: {formValues.mob}</p>
+                <p>First Name: {formValues.fname} </p>
+                <p> Last Name: {formValues.lname}</p>
+                <p>Email: {formValues.mail} </p><p>Contact Number: {formValues.mob}</p>
                 <p>City :{formValues.city}</p>
                 <p>Pincode :{formValues.pincode}</p>
-                <p> State: {formValues.state}</p>
-                <p> Country:{formValues.country}</p>
-                <p> Hobby:{formValues.hobby.toString()}</p>
+                <p>State: {formValues.state}</p> <p>Country:{formValues.country}</p>
+                <p>Hobby:{formValues.hobby.toString()}</p>
               </div>
             )}
           </tbody>
