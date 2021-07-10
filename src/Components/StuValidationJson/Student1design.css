@@ -1,29 +1,29 @@
-h4{
-  font-family: Calibri; 
-  font-size: 25pt;         
-  font-style: normal; 
-  font-weight: bold; 
-  color:SlateBlue;
-  text-align: center; 
-  text-decoration: underline
+.student1h4 {
+  font-family: Calibri;
+  font-size: 25pt;
+  font-style: normal;
+  font-weight: bold;
+  color: SlateBlue;
+  text-align: center;
+  text-decoration: underline;
 }
 
-table{
-  font-family: Calibri; 
-  color:white; 
-  font-size: 11pt; 
+.student1table {
+  font-family: Calibri;
+  color: white;
+  font-size: 11pt;
   font-style: normal;
   font-weight: bold;
   /* text-align:;  */
-  background-color: SlateBlue; 
-  border-collapse: collapse; 
-  border: 2px solid navy
+  background-color: SlateBlue;
+  border-collapse: collapse;
+  border: 2px solid navy;
 }
-table.inner{
-  border: 0px
+.student1table.inner {
+  border: 0px;
 }
 
-.circle{
+.circle {
   position: absolute;
   border-radius: 50%;
   background: SlateBlue;
@@ -31,70 +31,80 @@ table.inner{
   box-shadow: 0px 0px 1px 0px #508fb9;
 }
 
-.small{
+.small {
   width: 200px;
   height: 200px;
   right: -100px;
   bottom: -100px;
 }
 
-.medium{
+.medium {
   width: 400px;
   height: 400px;
   right: -200px;
   bottom: -200px;
 }
 
-.large{
+.large {
   width: 600px;
   height: 600px;
   right: -300px;
   bottom: -300px;
 }
 
-.xlarge{
+.xlarge {
   width: 800px;
   height: 800px;
   right: -400px;
   bottom: -400px;
 }
 
-.xxlarge{
+.xxlarge {
   width: 1000px;
   height: 1000px;
   right: -500px;
   bottom: -500px;
 }
 
-.shade1{
+.shade1 {
   opacity: 0.2;
 }
-.shade2{
+.shade2 {
   opacity: 0.5;
 }
 
-.shade3{
+.shade3 {
   opacity: 0.7;
 }
 
-.shade4{
+.shade4 {
   opacity: 0.8;
 }
 
-.shade5{
+.shade5 {
   opacity: 0.9;
 }
 
-@keyframes ripple{
-  0%{
+@keyframes ripple {
+  0% {
     transform: scale(0.8);
   }
-  
-  50%{
+
+  50% {
     transform: scale(1.2);
   }
-  
-  100%{
+
+  100% {
     transform: scale(0.8);
   }
+}
+.mytext {
+  
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #532a03;
+  /* letter-spacing: 5px; */
+  font-family: "Monoton", Helvetica, sans-serif;
+  margin-left:55%;
+  align-items: center;
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ErrorMessage from "./ErrorMessage";
 import "./StudentError.css";
 import "./StudentDesign.css";
+
 export default function Student() {
   const initialValues = {
     fname: "",
@@ -88,7 +89,7 @@ export default function Student() {
     return errors;
   };
   return (
-    <div>
+    <div className="studentbody">
       <div id="mainContainer">
         <div class="aside">
           <div class="cardview">
@@ -100,7 +101,7 @@ export default function Student() {
               <div class="wrapper1">
                 <h1>STUDENT DETAILS FORM</h1>
               </div>
-              <table class="center">
+              <table class="center" id="studenttable">
                 <tbody>
                 {/* <h2 class="txt">
                   <i>STUDENT DETAILS FORM</i>

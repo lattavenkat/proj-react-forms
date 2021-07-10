@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import "./Student1design.css";
-import ErrorMessage from "../StuValidation/ErrorMessage";
-export default function Student1(props) {
+import "./FetchFromJsonDesign.css";
+import FormError from "./FormError";
+import { useEffect } from "react";
+export default function Studentfetch() {
   const initialValues = {
     fname: "",
     lname: "",
@@ -10,18 +11,19 @@ export default function Student1(props) {
     city: "",
     pincode: "",
     state: "",
-    country: "",
+    cotdrop: "",
     hobby: false,
   };
   let isee = false;
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState(initialValues);
   const [submitted, setSubmitted] = useState(false);
-  const country = [
-    { id: 1, name: "India" },
-    { id: 2, name: "US" },
-    { id: 3, name: "China" },
-  ];
+  const [cotdrop,setCotdrop] = useState([]);
+  // const country = [
+  //   { id: 1, name: "India" },
+  //   { id: 2, name: "US" },
+  //   { id: 3, name: "China" },
+  // ];
   const handleDoSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
@@ -43,8 +45,7 @@ export default function Student1(props) {
           } else {
             console.log("Something went wrong");
           }
-        })
-        .catch((err) => err);
+        }).catch((err) => err);
     } else {
       console.warn("UnSuccessfull");
     }
@@ -121,11 +122,25 @@ export default function Student1(props) {
     }
     return errors;
   };
+
+  useEffect(()=>{
+    console.log("Executed after render method=======");
+    fetch("http://localhost:4002/countries").then(res => res.json()).then(data=>{
+      console.log(data);
+      setCotdrop(data);
+    }).catch(e=>{
+      console.error("ERROR IN COUNTRY...");
+      console.error(e);
+    }).finally(()=>{
+      console.log("SUCCESSFULL");
+    })
+},[])
+
   return (
-    <div >
-      <h4 className="student1h4">STUDENT REGISTRATION FORM</h4>
+    <div>
+      <h4 className="studentfetchh4">STUDENT REGISTRATION FORM</h4>
       <form onSubmit={handleDoSubmit} noValidate>
-        <table cellpadding="10" className="student1table" align="center" >
+        <table cellpadding="10" className="studentfetchtable" align="center">
           <tbody>
             {/* ----- First Name ---------------------------------------------------------- */}
             <tr>
@@ -139,7 +154,7 @@ export default function Student1(props) {
                   onChange={handleOnChange}
                 />
               </td>
-              <ErrorMessage message={formErrors.fname} />
+              <FormError message={formErrors.fname} />
             </tr>
             {/* ----- Last Name---------------------------------------------------------- */}
             <tr>
@@ -153,7 +168,7 @@ export default function Student1(props) {
                   onChange={handleOnChange}
                 />
               </td>
-              <ErrorMessage message={formErrors.lname} />
+              <FormError message={formErrors.lname} />
             </tr>
             {/* ----- Email Id ---------------------------------------------------------- */}
             <tr>
@@ -167,7 +182,7 @@ export default function Student1(props) {
                   onChange={handleOnChange}
                 />
               </td>
-              <ErrorMessage message={formErrors.mail} />
+              <FormError message={formErrors.mail} />
             </tr>
             {/* ----- Mobile Number ---------------------------------------------------------- */}
             <tr>
@@ -181,7 +196,7 @@ export default function Student1(props) {
                   onChange={handleOnChange}
                 />
               </td>
-              <ErrorMessage message={formErrors.mob} />
+              <FormError message={formErrors.mob} />
             </tr>
             {/* ----- City ---------------------------------------------------------- */}
             <tr>
@@ -195,7 +210,7 @@ export default function Student1(props) {
                   onChange={handleOnChange}
                 />
               </td>
-              <ErrorMessage message={formErrors.city} />
+              <FormError message={formErrors.city} />
             </tr>
             {/* ----- Pin Code ---------------------------------------------------------- */}
             <tr>
@@ -209,7 +224,7 @@ export default function Student1(props) {
                   onChange={handleOnChange}
                 />
               </td>
-              <ErrorMessage message={formErrors.pincode} />
+              <FormError message={formErrors.pincode} />
             </tr>
             {/* ----- State ---------------------------------------------------------- */}
             <tr>
@@ -223,7 +238,7 @@ export default function Student1(props) {
                   onChange={handleOnChange}
                 />
               </td>
-              <ErrorMessage message={formErrors.state} />
+              <FormError message={formErrors.state} />
             </tr>
             {/* ----- Country ---------------------------------------------------------- */}
             <tr>
@@ -232,15 +247,18 @@ export default function Student1(props) {
                 <select
                   name="country"
                   onChange={handleOnChange}
-                  value={formValues.country}
+                  value={formValues.cotdrop}
                 >
-                  <option value="-1">Select your country</option>
-                  {country.map((x) => {
-                    return <option key={x.id}>{x.name}</option>;
+                  <option value="-1">Please select a country</option>
+                  {cotdrop.map((x) => {
+                    return <option key={x.id} value={x.id}>{x.cnt}
+                      </option>;
+                   
                   })}
                 </select>
+                
               </td>
-              <ErrorMessage message={formErrors.country} />
+              <FormError message={formErrors.cotdrop} />
             </tr>
             {/* ----- Hobbies ---------------------------------------------------------- */}
             <tr>
@@ -280,45 +298,47 @@ export default function Student1(props) {
                 Sketching
                 <br />
               </td>
-              <ErrorMessage message={formErrors.hobby} />
+              <FormError message={formErrors.hobby} />
             </tr>
             {/* ----- Submit and Reset ------------------------------------------------- */}
             <tr>
               <td colspan="2" align="center">
                 <button type="submit">Submit</button>
-               
               </td>
             </tr>
             {Object.entries(formErrors).length === 0 && submitted && (
               //  alert(formValues.fname+" "+" your form has been submitted sucessfully")
               <div>
-              <h3>SUBMITTED SUCCESSFULLY</h3>
-              <div className="mytext">
-               
-                <p>First Name: {formValues.fname} </p>
-                <p> Last Name: {formValues.lname}</p>
-                <p>Email: {formValues.mail} </p><p>Contact Number: {formValues.mob}</p>
-                <p>City :{formValues.city}</p>
-                <p>Pincode :{formValues.pincode}</p>
-                <p>State: {formValues.state}</p> <p>Country:{formValues.country}</p>
-                <p>Hobby:{formValues.hobby.toString()}</p>
-              </div></div>
+                <h3>SUBMITTED SUCCESSFULLY</h3>
+                <div className="mytext">
+                  <p>First Name: {formValues.fname} </p>
+                  <p> Last Name: {formValues.lname}</p>
+                  <p>Email: {formValues.mail} </p>
+                  <p>Contact Number: {formValues.mob}</p>
+                  <p>City :{formValues.city}</p>
+                  <p>Pincode :{formValues.pincode}</p>
+                  <p>State: {formValues.state}</p>{" "}
+                  <p>Country:{formValues.country}</p>
+                  <p>Hobby:{formValues.hobby.toString()}</p>
+                </div>
+              </div>
             )}
           </tbody>
         </table>
       </form>
 
       {/* bgdesign */}
-      <div >
+      {/* <div >
         <div class="ripple-background">
           <div class="circle xxlarge shade1"></div>
           <div class="circle xlarge shade2"></div>
           <div class="circle large shade3"></div>
           <div class="circle mediun shade4"></div>
           <div class="circle small shade5"></div>
-        </div>
-        {/* bgdesign */}
-      </div>
+        </div> */}
+      {/* 
+      </div> */}
+      {/* bgdesign */}
     </div>
   );
 }

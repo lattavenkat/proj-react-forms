@@ -6,7 +6,7 @@
   align-items: center;
 }
 .txt {
-  font-size: 29px;
+  font-size: 19px;
   color: #fc3e65;
   margin-left: 190px;
 
@@ -14,22 +14,23 @@
 }
 #mainContainer {
   width: 45em;
-  height: 49em;
+  height: 75em;
   /* margin: 0 auto; */
-  margin-top: 3%;
+  margin-top: 2%;
   margin-left: 27%;
   box-sizing: border-box;
   display: flex;
-  background: white;
-  border-radius: 0.3em;
-  box-shadow: 12px 12px 30px -11.9px rgba(251, 60, 96, 0.35),
-    inset 0px 0px 2px 0px rgba(0, 0, 0, 0.3);
+  /* background: white; */
+  /* border-radius: 0.3em;  */
+  /* box-shadow: 12px 12px 30px -11.9px rgba(251, 60, 96, 0.35),
+    inset 0px 0px 2px 0px rgba(0, 0, 0, 0.3); */
   transition: 0.8s;
 }
 
 #mainContainer:hover {
   transform: scale(1.1);
   transition: 0.6s;
+  
 }
 
 .aside {
@@ -39,14 +40,15 @@
   border-bottom-right-radius: 0.1em;
   display: inline-block;
   filter: drop-shadow(5px 5px 15px #fc3e65);
+  
 }
 .cardview {
   position: relative;
   width: 47em;
-  height: 52em;
-  top: 5px;
-  left: -5px;
-  margin-top: -2%;
+  height: 59em;
+  top: 25px;
+  left: 45px;
+  /* margin-top: 25%; */
 
   border-top-left-radius: 1em;
   border-bottom-left-radius: 1.7em;
@@ -57,12 +59,15 @@
 }
 .cardview {
   background-color: #ffcdd2;
+  margin-left: -5%;
+  margin-top: 8%;
 }
 #card-content {
   width: 400px;
   height: inherit;
   box-sizing: border-box;
   padding: 20px 4px;
+  font-size: 15px;
 }
 /* label{
     margin-left: 29%;
@@ -77,8 +82,8 @@ button:hover {
  button {
    height: 30px;
    width:65px;
-  /* margin: 0 auto;
-  font-size: 2.0rem;
+  margin: 5%;
+  /* font-size: 2.0rem;
   padding: 1.25rem 2.5rem; */
   display: block;
   background-color: #ecaf69;
@@ -126,10 +131,10 @@ button:hover {
 
 h3 {
  
-  font-size: 20px;
+  font-size: 18px;
   text-transform: uppercase;
   color: #532a03;
-  letter-spacing: 5px;
+  /* letter-spacing: 5px; */
   font-family: "Monoton", Helvetica, sans-serif;
   margin-left:5cm;
   align-items: center;
